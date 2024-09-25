@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>do-while 실제 사용 예제</title>
+</head>
+<body>
+  <script>
+      let inputString = null;
+
+      alert("메시지를 입력하세요.");
+      alert("프로그램을 종료하려면 q를 입력하세요.")
+
+      // 최소 한번은 무조건 실행됨. 사용자의 의도를 물어보는 프로그램에 사용됨
+      do {
+        inputString = prompt("메시지를 입력하세요.");
+        document.write(inputString + "<br/>");
+      } while(!(inputString == "q")); // q를 입력하면 true가 되어 루프를 계속 진행
+      // !(논리부정연산자)를 사용 false 바꾼다.
+
+      document.write("프로그램 종료!!");
+  </script>
+</body>
+</html>

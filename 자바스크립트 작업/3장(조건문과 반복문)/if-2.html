@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>조건문-2</title>
+</head>
+<body>
+    <script>
+        // 짝수 검사 프로그램
+        let value = window.prompt("정수를 입력하세요.");
+
+        // prompt()에서 받은 value값은 String 타입,
+        // 형변환 메서드 String Convert to Integer (강제 형변환)
+        alert(typeof value);
+        value = parseInt(value);
+
+        if (value % 2 == 0)
+            alert("짝수 입니다.");
+        else
+            alert("홀수 입니다.");
+
+
+    </script>
+</body>
+</html>

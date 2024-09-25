@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Continure예제</title>
+</head>
+<body>
+  <script>
+      // 2의 배수를 제외하고 나머지는 출력(홀수 출력)
+      for (let i = 1; i <= 100; i++) {
+        // 2의 배수인지 확인하는 코드
+        if (i % 2 == 0 && i % 3 == 0) {
+            continue;   // continue아래에 있는 실행코드를 무시, 증감식으로 이동
+        }
+        document.write(i + "<br/>");
+      }
+  </script>
+</body>
+</html>
