@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>글자 숨기기, 보이기 예제</title>
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#showText").click(function () {
+                $("div").hide();
+            });
+            $("#hideText").click(function () {
+                $("div").show();
+            });
+        })
+    </script>
+</head>
+<body>
+    <div>안녕하세요. 초보 jquery</div>
+    <button id="showText">글자 숨기기</button>
+    <button id="hideText">글자 보이기</button>
+</body>
+</html>

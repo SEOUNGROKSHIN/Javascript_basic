@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트로 색상 바꾸기</title>
+</head>
+<body>
+    <div>
+        <ul class="menu" id="menu1">
+            <li>김밥</li>
+            <li>비빔밥</li>
+            <li>제육덮밥</li>
+            <li>오징어덮밥</li>
+            <li>돌솥밥</li>
+        </ul>
+        <ul class="menu" id="menu2">
+            <li>설렁탕</li>
+            <li>육계장</li>
+            <li>닭계장</li>
+            <li>추어탕</li>
+            <li>감자탕</li>
+        </ul>
+    </div>
+    <script>
+        window.onload = function () {
+            // menu2를 찾는다
+            let menu2 = document.getElementById("menu2");
+            // ul Tag -> (menu2) 하위 요소인 li태그를 배열로 저장
+            let liArrays = menu2.getElementsByTagName("li");
+            // li태그를 하나씩 접근, 일일이 변경을 하고 있다.
+            for (let i = 0; i < liArrays.length; i++) {
+                let li = liArrays[i];
+                li.style.color = "orangered";
+            }
+        }
+    </script>
+</body>
+</html>

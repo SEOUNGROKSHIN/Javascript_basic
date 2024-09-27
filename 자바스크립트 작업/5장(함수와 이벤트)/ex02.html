@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>함수-2</title>
+</head>
+<body>
+    <script>
+        function hello() {
+            document.write("반갑습니다. <br/>")
+        }
+        hello();
+        hello();
+        hello();
+
+        // 매개변수와 리턴값이 있는 함수 만들기
+        function add(num1, num2) {  // 매개변수 2개를 받고있다.
+            let result = num1 + num2;
+            return result;  // 호출한 곳으로 결과값 전달
+        }
+        function multi(num1, num2) {  // 매개변수 2개를 받고있다.
+            let result = num1 * num2;
+            return result;  // 호출한 곳으로 결과값 전달
+        }
+
+        let value = add(100, 200);
+        alert("두 수의 합 : " + value);
+
+        let value = multi(100, 200);
+        alert("두 수의 곱 : " + value);
+    </script>
+</body>
+</html>

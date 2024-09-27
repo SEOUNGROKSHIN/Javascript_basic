@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>변수의 생명주기</title>
+</head>
+<body>
+    <script>
+        function localTest() {
+            let value = "신승록";
+            document.write("1. value = " + value);      // { }내에서는 지역변수가 출력됨.
+        }
+
+        localTest();
+        // value값은 지역변수로 선언되었기 깨문에, { }밖에서는 사용할 수 없다.
+        document.write("2. value = " + value);
+    </script>
+</body>
+</html>

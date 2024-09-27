@@ -1,0 +1,13 @@
+.imgGroup {
+    width: 250px;
+    height: 250px;
+}
+div.img-container {
+    position: relative;
+}
+div.img-container img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 120px;
+}
