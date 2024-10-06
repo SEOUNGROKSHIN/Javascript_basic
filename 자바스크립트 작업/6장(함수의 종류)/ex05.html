@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>함수-5(리턴값으로 중첩함수를 이용)</title>
+    <script>
+        function hi() {
+            function hello(name) {
+                document.write(name + "님 안녕하세요.")
+            }
+            return hello; // 리턴값으로 중첩함수를 넘기고 있따.
+        }
+        // hi를 호출하는 것이 아니고 return값인 hello의 함수를 호출한다.
+        let func = hi();
+        func("홍길동");    //hello("홍길동");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
