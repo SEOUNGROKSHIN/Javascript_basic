@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>이벤트-1(javascript)</title>
+    <link rel="stylesheet" href="css/event.css">
+    <script src="js/event.js"></script>
+</head>
+<body>
+    <div id="item">
+        <img src="images/dandelion.png" alt="민들레">
+        <button class="over" id="open" onclick="showDetail()">상세 설명 보기</button>
+        <div class="detail" id="desc">
+            <h3>민들레</h3>
+            <p>민들레는 국화과에 속하는 다년생 초본식물로서, 우리나라 각지의 밭이나 공터의 양지바른 곳에서 자라는 여러해살이풀이다.<br>
+                한반도를 비롯하여 중국와 일본 등지에서 분포한다. 현재는 서양민들레의 번식력에 밀려 보기 힘들어지고 있다. 서양민들레는 꽃을 감싸는 바깥쪽 꽃받침이 분수처럼 아래로 휘어져 있는 반면에, 우리나라 고유의 민들레는 바깥쪽 꽃받침마저 꽃을 감싸고 있다.
+            </p>
+            <button id="close" onclick="hideDetail()">상세 설명 닫기</button>
+        </div>
+    </div>
+</body>
+</html>
