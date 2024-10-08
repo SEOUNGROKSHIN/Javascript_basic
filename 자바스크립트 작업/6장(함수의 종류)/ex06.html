@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>함수-6(익명함수를 이용)</title>
+    <script src="libs/jquery-3.5.1.min.js"></script>
+    <style>
+        #container {
+            border: 1px solid blue;
+            line-height: 15px;
+        }
+    </style>
+    <script>
+        let count = 0;  //전역변수 선언과 동시에 초기화
+        let $container = null; //전역변수 선언과 동시에 초기화
+
+        $(document).ready(function () {
+            $container = $("#container");
+            // append() => 문자열 붙이기 함수
+            $container.append("<p>" + count + "안녕하세요. 반갑습니다.");
+            count++;
+            // 버튼 클릭이 되면 익명함수를 실행, 글자를 출력
+            $("#btnPrint").click(function () {
+                $container.append('<p>' + count + "안녕하세요. 반갑습니다.");
+                count++;
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="btnPrint">출력하기</button>
+    <div id="container">
+
+    </div>
+</body>
+</html>

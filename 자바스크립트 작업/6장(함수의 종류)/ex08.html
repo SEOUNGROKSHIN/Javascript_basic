@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>함수-8(객체방식으로 함수정의, 익명함수의 확장으로 함수 정의)</title>
+    <script>
+        // 객체 방식으로 함수를 정의 (실무에서는 X)
+        // let hi = new Function("name", "document.write(name + '님 환영합니다.')");
+        // hi("신승록");
+
+        // 익명함수의 확장으로 함수 정의
+        // 재사용하는 목적이 아닌 함수들과의 충돌을 막기위해 사용.
+        (function(name){
+            document.write(name + "님 환영합니다.");
+        })("홍길동");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>함수-10(중첩함수의 변수의 범위)</title>
+    <script>
+        let a = 100;
+        let b = 200;
+        let c = 300;
+
+        function outter() {
+            //outer()함수의 지역변수
+            let b = 2000;
+            let c = 3000;
+
+            // 중첩함수 선언과 구현
+            // 중첩함수는 외부함수의 변수에 쉽게 접근을 할수있는 장점이 있다.
+            function inner() {
+                let c = 30000;
+                document.write("1.a = " + a + "<br/>");
+                document.write("2.b = " + b + "<br/>");
+                document.write("3.c = " + c + "<br/>");
+            }
+            inner();    // 중첩함수를 호출하고 있다.
+        }
+        outter();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

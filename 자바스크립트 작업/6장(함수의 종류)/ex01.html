@@ -10,11 +10,11 @@
             document.write(name + "님 환영합니다.");
         }
         hi("홍길동");
-        var fhi = hi;   //함수 리터럴--함수를 변수에 저장한 꼴
+        let fhi = hi;   //함수 리터럴--함수를 변수에 저장한 꼴
         fhi("임꺽정");
 
         //익명함수를 변수에다가 대입--변수가 마치 함수명처럼 사용이 되는 꼴
-        var func = function(){
+        let func = function(){
             document.write("함수 리터럴");
         }
         func();

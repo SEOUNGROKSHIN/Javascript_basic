@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>콜백함수-3</title>
+    <script>
+        // 콜백함수를 선언 호출
+        function add(n1, n2, callback) {
+            let temp = n1 + n2;
+            callback(temp);
+            document.write("add()함수" + temp + "<br/>")
+        }
+        // 출력부
+        function result(value) {
+            document.write("result()함수 결과 : " + value);
+        }
+
+        add(50, 100, result);
+
+        // 디버깅 => add(50, 100, result) => result함수가 callback()에 담김
+    </script>
+</head>
+<body>
+
+</body>
+</html>
