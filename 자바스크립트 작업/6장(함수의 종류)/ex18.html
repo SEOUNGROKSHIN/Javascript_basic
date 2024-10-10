@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>클로저 함수-1</title>
+    <script>
+        // 일반함수에서의 지역변수는 함수가 종료되면 메모리에서 지워짐
+        // function add(){
+        //     let cnt = 0;
+        //     cnt++;
+        //     return cnt;
+        // }
+        // document.write("1번째 cnt 값 : " + add() + "<br>");
+        // document.write("2번째 cnt 값 : " + add() + "<br>");
+        // document.write("3번째 cnt 값 : " + add() + "<br>");
+        // document.write("4번째 cnt 값 : " + add() + "<br>");
+        // document.write("5번째 cnt 값 : " + add() + "<br>");
+
+        // 클로저 이용
+        function createCounter() {
+            let cnt = 0;    // 지역변수를 선언했다.
+            // add()는 클로저 함수
+            function add(){
+                cnt++;      // 외부함수의 지역변수를 이용, 메모리에서 제거 안됨(클로저 함수)
+                return cnt;
+            }
+            return add;
+        }
+        let counter = createCounter(); //함수 리터럴
+        document.write("1번째 cnt 값 : " + counter() + "<br>");
+        document.write("2번째 cnt 값 : " + counter() + "<br>");
+        document.write("3번째 cnt 값 : " + counter() + "<br>");
+        document.write("4번째 cnt 값 : " + counter() + "<br>");
+        document.write("5번째 cnt 값 : " + counter() + "<br>");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

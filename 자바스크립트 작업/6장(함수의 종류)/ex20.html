@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>콜백함수-5(일반함수 풀이)</title>
+    <title>클로저 함수-3</title>
     <style>
       .tab-menu {
       /* 블릿 제거 */
@@ -45,49 +45,23 @@
   <script>
       $(document).ready(function () {
           // 탭메뉴 코드 실행될 수 있도록 함수 호출
-          tabMenu("#tabmenu1");
-          alert("신승록")
+          tabMenu("#tabmenu1 li");
       })
+
       function tabMenu(selector) {
-        let $tabMenu = null;
-        let $menuItems = null;
+          // $selectedMenuItem => 지역변수이다.
+          let $selectedMenuItem = null;
 
-        // 선택한 탭메뉴를 저장할 변수
-        let $selectedMenuItem = null;
+          $(selector).click(function () {
+             // $selectedMenuItem을 사용 (클로저 현상)
+             if ($selectedMenuItem != null) {
+                 $selectedMenuItem.removeClass("select");
+             }
+             $selectedMenuItem = $(this);
+             $selectedMenuItem.addClass("select");
+          });
 
-        // 요소를 초기화
-        function init(selector){
-            $tabMenu = $(selector);
-            // 6개의 웹요소인 li태그를 배열로 받고 있다.
-            $menuItems =$tabMenu.find("li");
-        }
-
-        // 이벤트 초기화 및 등록
-          function initEvent() {
-              $menuItems.click(function () {
-                // 현재 선택된 li라는 웹요소를 매개변수로 지정하고 있다.
-                setSelectItem($(this));
-              });
-          }
-      // 선택된 메뉴 아이템 만들어 주는 함수
-      function setSelectItem($item) {
-        // 선택된 메뉴가 있다면...
-        if ($selectedMenuItem != null) {
-                // 그 메뉴를 select를 제거하라.
-                $selectedMenuItem.removeClass("select");
-          }
-          // 매개변수로 넘어온 선택된 아이템을 대입을 하고 있다.
-          $selectedMenuItem = $item;
-
-          // 그 메뉴를 select를 추가해라.
-          $selectedMenuItem.addClass("select");
-
-          $("#info").html($selectedMenuItem.index());
       }
-      init(selector);
-      initEvent();
-     }
-
   </script>
 </head>
 <body>
@@ -99,6 +73,5 @@
       <li class="menuitem5"></li>
       <li class="menuitem6"></li>
     </ul>
-    <div>선택한 인덱스 값 : <span id="info"></span></div>
 </body>
 </html>

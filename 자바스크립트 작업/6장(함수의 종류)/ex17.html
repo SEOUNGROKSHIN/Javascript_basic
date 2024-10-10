@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>콜백함수-5(일반함수 풀이)</title>
+    <title>콜백함수-5(콜백함수 풀이)</title>
     <style>
       .tab-menu {
       /* 블릿 제거 */
@@ -45,10 +45,10 @@
   <script>
       $(document).ready(function () {
           // 탭메뉴 코드 실행될 수 있도록 함수 호출
-          tabMenu("#tabmenu1");
-          alert("신승록")
+          tabMenu("#tabmenu1", onSelectItem());
       })
-      function tabMenu(selector) {
+
+      function tabMenu(selector, callback) {
         let $tabMenu = null;
         let $menuItems = null;
 
@@ -78,16 +78,20 @@
           }
           // 매개변수로 넘어온 선택된 아이템을 대입을 하고 있다.
           $selectedMenuItem = $item;
-
           // 그 메뉴를 select를 추가해라.
           $selectedMenuItem.addClass("select");
-
-          $("#info").html($selectedMenuItem.index());
+          // 선택 콜백 함수를 실행하도록 하였다.
+          if (!callback) {
+              callback($selectedMenuItem.index());
+          }
       }
       init(selector);
       initEvent();
      }
-
+     // 로직 처리(선택 처리)
+      function onSelectItem(index) {
+          $("#info").html(index);
+      }
   </script>
 </head>
 <body>
