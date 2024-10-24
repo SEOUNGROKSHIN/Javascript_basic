@@ -7,7 +7,7 @@
  * */
 
 
-const title = document.querySelector(".hello");
+const title = document.querySelector(".hello h1");
 
 // object요소들을 반환
 // console.dir(title);
@@ -25,14 +25,11 @@ const title = document.querySelector(".hello");
 // elEvent.addEventListener("click", handleTitleClick);
 
 function handleTitleClick() {
-    const currentColor = title.style.color;
-      let newColor;
-    if (currentColor === "blue") {
-        newColor = "tomato";
+    if(title.className === "active") {
+        title.className = "";
     } else {
-        newColor = "blue";
+        title.className = "active";
     }
-    title.style.color = newColor;
 }
 
 title.addEventListener("click", handleTitleClick);

@@ -1,0 +1,8 @@
+.active {
+    color: orangered;
+}
+
+.hello {
+    color: #007bff;
+    transition: color .5s ease-in-out;
+}
