@@ -1,8 +1,15 @@
 .active {
     color: orangered;
 }
-
 .hello {
     color: #007bff;
     transition: color .5s ease-in-out;
+}
+
+.clicked {
+    color: antiquewhite;
+}
+
+.shin {
+    color: black;
 }

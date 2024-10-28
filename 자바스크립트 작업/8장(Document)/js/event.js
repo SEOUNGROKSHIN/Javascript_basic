@@ -25,11 +25,18 @@ const title = document.querySelector(".hello h1");
 // elEvent.addEventListener("click", handleTitleClick);
 
 function handleTitleClick() {
-    if(title.className === "active") {
-        title.className = "";
-    } else {
-        title.className = "active";
-    }
+    const clickedClass = "clicked";
+
+    // 버전 1
+    // if(title.classList.contains(clickedClass)) {
+    //     title.classList.remove(clickedClass);
+    // } else {
+    //     title.classList.add(clickedClass);
+    // }
+
+    // toggle 적용
+    // toggle은 title의 classList에 clicked class가 있는지 확인 후 있으면 제거 or 존재하지 않으면 추가
+    title.classList.toggle(clickedClass);
 }
 
 title.addEventListener("click", handleTitleClick);
