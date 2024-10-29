@@ -3,16 +3,13 @@
 // const loginButton = loginForm.querySelector("button");
 
 const loginInput = document.querySelector("#login-form input");
-const loginButton = document.querySelector("#login-form button");
+const loginForm = document.querySelector("#login-form");
 
-loginButton.addEventListener("click", function () {
-   const userName = loginInput.value;
-   //  JS Validation
-   // if (userName === "") {
-   //     alert("Please write your name");
-   // } else if (userName.length > 15) {
-   //     alert("Your name is too long");
-   // }
+// JS는 이벤트에 대한 정보를 (event)인자에 담음 그래서 event를 호출하게되면 submit에 대한 정보를 가져올 수 있음.
+function onLoginBtnClick(event) {
+   event.preventDefault();
+   console.log(loginInput.value);
+}
 
-    console.log(userName);
-});
+loginForm.addEventListener("submit", onLoginBtnClick);
+

@@ -25,7 +25,9 @@ const title = document.querySelector(".hello h1");
 // elEvent.addEventListener("click", handleTitleClick);
 
 function handleTitleClick() {
-    const clickedClass = "clicked";
+    // const clickedClass = "clicked";
+    // const shin = "shin";
+    const hidden = "hidden";
 
     // 버전 1
     // if(title.classList.contains(clickedClass)) {
@@ -36,7 +38,8 @@ function handleTitleClick() {
 
     // toggle 적용
     // toggle은 title의 classList에 clicked class가 있는지 확인 후 있으면 제거 or 존재하지 않으면 추가
-    title.classList.toggle(clickedClass);
+    // title.classList.toggle(clickedClass);
+    title.classList.toggle(hidden);
 }
 
 title.addEventListener("click", handleTitleClick);

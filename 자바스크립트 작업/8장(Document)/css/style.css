@@ -10,6 +10,6 @@
     color: antiquewhite;
 }
 
-.shin {
-    color: black;
+.hidden {
+    display: none;
 }
