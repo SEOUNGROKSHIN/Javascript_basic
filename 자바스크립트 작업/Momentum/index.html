@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <form id="login-form">
-    <input maxlength="15" required type="text" placeholder="What is your name?"/>
-    <script src="app.js"></script>
+        <input
+                required
+                maxlength="15"
+                type="text"
+                placeholder="What is your name?"
+        />
+        <input type="submit" value="login">
     </form>
+    <h1 id="greeting" class="hidden"></h1>
+    <script src="app.js"></script>
 </body>
 </html>
