@@ -1,3 +1,9 @@
 .hidden{
     display: none;
 }
+#quotes span:first-child {
+    font-style: italic;
+}
+#quotes span:last-child {
+    font-style: normal;
+}
