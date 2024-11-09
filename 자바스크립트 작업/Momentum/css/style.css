@@ -7,3 +7,6 @@
 #quotes span:last-child {
     font-style: normal;
 }
+.clock {
+    align-content: center;
+}
