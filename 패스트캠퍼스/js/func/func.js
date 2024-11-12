@@ -4,8 +4,6 @@ let user = {
 
 };
 
-// console.log(user.name);
-
 // 함수 선언
 function helloShin() {
     console.log("hello");
@@ -39,7 +37,7 @@ const Rocky = {
         return "My real Name is SEOUNGROKSHIN";
     }
 }
-    const myName = Rocky.getName();
+const myName = Rocky.getName();
 
 console.log("내이름은")
 console.log(Rocky.getName());
