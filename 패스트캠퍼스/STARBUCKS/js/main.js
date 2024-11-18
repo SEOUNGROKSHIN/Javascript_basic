@@ -39,3 +39,14 @@ window.addEventListener('scroll', _.throttle(function () {
     }
 }, 300));
 // _.throttle(함수 , 시간);
+
+
+const fadeEls = document.querySelectorAll('.visual .fade-in')
+fadeEls.forEach(function (fadeEl, index) {
+    // gsap.to(요소, 지속시간, 옵션)
+    gsap.to(fadeEl, 1, {
+        // 요소가 증가할 때마다 순차적으로 opacity가 0에서 1로 변경됨
+        delay: (index + 1) * .7, // .7 , 1.4 , 2.1 2.8
+        opacity: 1
+    });
+})
