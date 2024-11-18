@@ -14,6 +14,57 @@ a {
     text-decoration: none;
 }
 
+.btn {
+    width: 130px;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 4px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: block;
+    transition: .4s;
+}
+.btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+.btn.btn--reverse {
+    background-color: #333;
+    color: #fff;
+}
+.btn.btn--reverse:hover {
+    background-color: transparent;
+    color: #333;
+}
+.btn.btn--brown {
+    color: #592B18;
+    border-color: #592B18;
+}
+.btn.btn--brown:hover {
+    color: #fff;
+    background-color: #592B18;
+}
+.btn.btn--gold {
+    color: #D9AA8A;
+    border-color: #D9AA8A;
+}
+.btn.btn--gold:hover {
+    color: #ffffff;
+    border-color: #D9AA8A;
+}
+.btn.btn--white {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+.btn.btn--white:hover {
+    color: #333;
+    background-color: #fff;
+}
+
 /* HEADER */
 header {
     width: 100%;
@@ -130,7 +181,6 @@ header .main-menu .item:hover .item__name {
     color: #669900;
     border-radius: 6px 6px 0 0;
 }
-
 header .main-menu .item .item__contents{
     width: 100%;
     position: fixed;
@@ -204,13 +254,13 @@ header .badges .badge {
 }
 .visual .inner {
     height: 646px;
-    background-color: orange;
-
 }
 .visual .title {
 }
 .visual .title .btn {
-
+    position: absolute;
+    top: 259px;
+    left: 173px;
 }
 
 .visual .cup1.image {
