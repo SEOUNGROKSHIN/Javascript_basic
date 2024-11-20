@@ -1,4 +1,5 @@
 /* COMMON */
+
 body {
     color: #333;
     font-size: 16px;
@@ -334,11 +335,19 @@ header .badges .badge {
     font-weight: 700;
     margin-right: 20px;
 }
-.notice .notice-line .inner__left .swiper-container {
-    background-color: darkorange;
+.notice .notice-line .inner__left .swiper {
     height: 62px;
     flex-grow: 1;
 }
+.notice .notice-line .inner__left .swiper .swiper-slide {
+    height: 62px;
+    display: flex;
+    align-items: center;
+}
+.notice .notice-line .inner__left .swiper .swiper-slide a{
+    color: #ffffff;
+}
+
 .notice .notice-line .inner__left .notice-line_more {
     width: 62px;
     height: 62px;
@@ -374,3 +383,19 @@ header .badges .badge {
     font-size: 30px;
 }
 
+.notice .promotion {
+    height: 693px;
+    background-color: #f6f5ef;
+    position: relative;
+}
+
+.notice .promotion .swiper {
+    width: calc(819px * 3 + 20px);
+    height: 553px;
+    background-color: royalblue;
+    position: absolute;
+    top: 40px;
+    /* 요소를 중앙 정렬하기 위해 왼쪽으로 50% 보내고 요소를 width값의 절반 만큼 다시 요소를 땡겨온다 이때 (819px * 3 + 20px) ==> / -2*/
+    left: 50%;
+    margin-left: calc((819px * 3 + 20px) / -2);
+}
