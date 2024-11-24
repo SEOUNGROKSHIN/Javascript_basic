@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select > option</title>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <select id="national">
+        <option value="한국" selected>한국</option>
+        <option value="미국">미국</option>
+        <option value="중국">중국</option>
+        <option value="영국">영국</option>
+    </select>
+    <label>선택한 나라 : </label><input type="text" id="result">
+</body>
+<script>
+    $("#national").change(function () {
+        let value = $("option:selected").val();
+        $("#result").val(value);
+    })
+</script>
+</html>

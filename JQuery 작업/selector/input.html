@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>INPUT 상태에 따른 선택자</title>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <label>활성화 텍스트상자 : </label><input type="text">
+    <label>비 활성화 텍스트상자 : </label><input type="text" disabled>
+    <label>활성화 버튼 : </label><input type="button" value="활성화">
+    <label>비 활성화 버튼 : </label><input type="button" value="비활성화" disabled>
+</body>
+<script>
+    $(function () {
+        $("input:enabled").css("background", "green");
+        $("input:disabled").css("background", "red");
+    })
+</script>
+</html>
