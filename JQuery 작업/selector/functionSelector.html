@@ -3,8 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="../jquery/jquery.min.js"></script>
 </head>
 <body>
+<table border="1px">
+    <tr>
+        <th>상품명</th>
+        <th>카테고리</th>
+        <th>가격</th>
+    </tr>
+    <tr>
+        <td>노트북</td>
+        <td>전자제품</td>
+        <td>무료</td>
+    </tr>
+    <tr>
+        <td>운동화</td>
+        <td>패션</td>
+        <td>120,000원</td>
+    </tr>
+    <tr>
+        <td>갤럭시워치</td>
+        <td>전자제품</td>
+        <td>무료</td>
+    </tr>
+    <tr>
+        <td>책상</td>
+        <td>가구</td>
+        <td>150,000원</td>
+    </tr>
+    <tr>
+        <td>스피커</td>
+        <td>전자제품</td>
+        <td>80,000원</td>
+    </tr>
+    <tr>
+        <td>후드티</td>
+        <td>패션</td>
+        <td>50,000원</td>
+    </tr>
+    <tr>
+        <td colspan="2">총합계</td>
+        <td>1,900,000원</td>
+    </tr>
+</table>
+<script>
+    $(function() {
+        // n번째 위치하는 객체 선택(인덱스)
+        $("tr:eq(0)").css({"background-color":"royalblue", "color" : "white"})
 
+        // 순번으로 선택하는 함수
+        $("tr:nth-child(2n)").css({"background" : "skyblue"})
+        $("td:nth-child(3)").css({"background" : "orange"})
+
+        // n번째를 초과하는 객체 선택
+        $("tr:gt(6)").css({"background" : "lightgray"})
+
+        // n번째를 미만에 위치하는 객체 선택
+        $("tr:lt(7)").css("font-size", "1.5em");
+
+        // 특정 문자열을 포함하는 객체 선택
+        $("td:contains('무료')").css("background", "blue");
+
+    })
+</script>
 </body>
 </html>
