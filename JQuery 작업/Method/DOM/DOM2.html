@@ -5,10 +5,39 @@
     <title>객체 생성 및 제거</title>
     <h3>삽입 메소드 part1</h3>
     <script src="../../jquery/jquery.min.js"></script>
+    <style>
+        .item {
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+            margin: 5px;
+        }
+        #item1 {
+            background: darkmagenta;
+        }
+        #item2 {
+            background: cornflowerblue;
+        }
+        #item3 {
+            background: darkcyan;
+        }
+        #clone {
+            position: relative;
+        }
+        .copy_btn, .del_btn {
+            background: #999999;
+            text-align: center;
+            font-family: 'Nanum Gothic', sans-serif;
+            border-radius: 15px;
+            height: 50px;
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
 <p>
     <code>
+        (A)가 기준이 됨
         <p>$(A).appendTo(B) : A를 B의 요소 내 뒷부분의 추가</p>
         <p>$(A).prependTo(B) : A를 B의 요소 내 앞부분의 추가</p>
         <p>$(A).insertAfter(B) : A를 B의 요소 뒤에 추가</p>
@@ -17,22 +46,67 @@
 </p>
 <hr>
 
-<h1 id="test1"><label>코로나</label></h1>
-<h1 id="test2"><label>코로나</label></h1>
+<h1 id="test1"><label>테스트</label></h1>
+<h1 id="test2"><label>40000원 입니다.</label></h1>
 <h1 id="test3"><label>코로나</label></h1>
-<h1 id="test4"><label>코로나</label></h1>
+<h1 id="test4"><label>퇴근</label></h1>
 <script>
     $(function () {
         let interval = setInterval(function () {
             // document.createElement("label");
-            $("<label>")
-
+            $("<label>241126</label>").appendTo($("#test1"));
+            $("<label>신속항원검사 비용은</label>").prependTo($("#test2"));
+            $("<label>없어져라!!</label>").insertAfter($("#test3"));
+            $("<label>하고싶다!!</label>").insertBefore($("#test4"));
             setTimeout(function () {
                 clearInterval(interval);
             })
         }, 3000)
     })
 </script>
+    <h3>삽입 메소드 part2</h3>
+    <p>
+        <code>
+            (B)가 기준이 됨
+            $(A).append(B) : B를 A요소 내 뒷부분에 추가
+            $(A).prepend(B) : B를 A요소 내 뒷부분에 추가
+            $(A).after(B) : B를 A요소 내 뒷부분에 추가
+            $(A).before(B) : B를 A요소 내 뒷부분에 추가
+        </code>
+    </p>
+<hr>
 
+    <h3>객체 복사와 제거 메소드</h3>
+    <p>clone() : HTML 내부에 있는 요소를 복사</p>
+    <div id="clone">
+        <div id="item1" class="item">
+            <button class="copy_btn">복사하기</button>
+            <button class="del_btn">삭제하기</button>
+        </div>
+        <div id="item2" class="item">
+            <button class="copy_btn">복사하기</button>
+            <button class="del_btn">삭제하기</button>
+        </div>
+        <div id="item3" class="item">
+            <button class="copy_btn">복사하기</button>
+            <button class="del_btn">삭제하기</button>
+        </div>
+    </div>
+    <div id="result"></div>
+    <br>
+    <script>
+        $(function () {
+            $(".copy_btn").click(function () {
+                // clone(true) => el 요소도 event가 적용됨
+                $(this).parent().clone(true).appendTo($("#result"));
+            })
+            $(".del_btn").click(function () {
+                // 상위 요소 DOM 요소들이 삭제됨[del_btn의 상위 요소]
+                $(this).parent().remove();
+                // 안에 있는 DOM 요소들이 지워짐
+                $(this).parent().empty();
+            })
+        })
+    </script>
 </body>
 </html>

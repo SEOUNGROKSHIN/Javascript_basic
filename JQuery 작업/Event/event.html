@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>이벤트</title>
+  <script src="../jquery/jquery.min.js"></script>
+  <style>
+    #test_on {
+      width : 300px;
+      height: 300px;
+      background: #669900;
+    }
+    #test_on_data {
+      width : 300px;
+      height: 300px;
+      background: #000000;
+    }
+    .trg {
+      width: 100px;
+      height: 100px;
+      background: #669900;
+      text-align: center;
+      cursor : pointer;
+    }
+    .increment {
+      background: black;
+      width: 100px;
+      height: 25px;
+      color: white;
+      text-align: center;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+   <h3>bind() : 현재 존재하는 문서 객체만 이벤트 연결</h3>
+   <h3>unbind() : bind()로 연결된 이벤트 제거</h3>
+  <h1 id="test_bind">마우스를 올려보세요</h1>
+  <script>
+<!--   예전 코드 -->
+      $(function () {
+        // methodChaning으로 이벤트 두개 적용
+          $("#test_bind").bind('mouseenter', function () {
+                $(this).css({"background" : "black", "color": "white"});
+          }).bind('mouseleave', function () {
+              $(this).css({"background" : "white", "color" : "black" })
+          });
+
+          $("#test_bind").bind('click', function () {
+            $(this).unbind('mouseenter').unbind('mouseleave').css({"background" : "white", "color" : "black"})
+          })
+      })
+  </script>
+<br>
+<hr>
+  <h3>on() : bind() 대신 on()으로 대체됨</h3>
+  <h3>off() : unbind() 대신 off()으로 대체됨</h3>
+  <div id="test_on">기본상태</div>
+
+  <script>
+      $(function () {
+        // on은 객체형태로 전달
+        $("#test_on").on({"mouseenter" :function (){
+              $(this).css({"background": "#93BC42"}).text("마우스 올라감");
+          }, "mouseleave" :function () {
+              $(this).css({"background" : "#C1DA8E"}).text("마우스 내려감")
+          }, "click" : function () {
+              $(this).off("mouseenter").off("mouseleave").css({"background": "#669900"}).text("기본상태 모든 이벤트 제거");
+          }});
+      })
+  </script>
+
+  <br>
+
+  <div id="test_on_data"></div>
+
+   <script>
+    let i = 0;
+    $(function () {
+        $("#test_on_data").on("click", {name : "ObjectName"} , function (event) {
+          // data 인자값 객체로 반환
+          alert(event.data.name)
+        })
+    })
+  </script>
+
+  <div id="wrap" style="border: 1px solid white">
+      <h2>Header</h2>
+  </div>
+  <script>
+      $(function () {
+        $("#wrap>h2").on('click', function () {
+          let targetHTML = $(this).html();
+          let length = $("h2").length;
+
+          $("#wrap").append(`<h2>${targetHTML} ${length}</h2>`)
+        })
+      })
+  </script>
+
+  <hr>
+
+  <h3>one() </h3>
+  <p>이벤트를 한번만 연결할 때</p>
+  <h1 id="test_one">클릭 ONE_TIME</h1>
+  <script>
+      $(function () {
+        $("#test_one").one("click", function (){
+            alert("클릭 이벤트 발생");
+        })
+      })
+  </script>
+
+  <h3>trigger() 메소드</h3>
+  <div class="trg" id="trg">
+    click num : <span>0</span>
+  </div>
+   <p>서로 다른 요소를 하나의 이벤트로 연결할 때 트리거를 사용함</p>
+
+  <div class="increment" id="increment">Click me!</div>
+  <script>
+      $(function () {
+        let cnt = 0;
+
+        $("#trg").on("click", function() {
+          cnt++;
+          $("span").text(cnt);
+        })
+
+        $("#increment").click(function () {
+          $("#trg").trigger("click");
+        })
+      })
+  </script>
+</body>
+</html>
