@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>객체 생성 및 제거</title>
+    <h3>삽입 메소드 part1</h3>
+    <script src="../../jquery/jquery.min.js"></script>
+</head>
+<body>
+<p>
+    <code>
+        <p>$(A).appendTo(B) : A를 B의 요소 내 뒷부분의 추가</p>
+        <p>$(A).prependTo(B) : A를 B의 요소 내 앞부분의 추가</p>
+        <p>$(A).insertAfter(B) : A를 B의 요소 뒤에 추가</p>
+        <p>$(A).insertBefore(B) : A를 B의 요소 앞에 추가</p>
+    </code>
+</p>
+<hr>
+
+<h1 id="test1"><label>코로나</label></h1>
+<h1 id="test2"><label>코로나</label></h1>
+<h1 id="test3"><label>코로나</label></h1>
+<h1 id="test4"><label>코로나</label></h1>
+<script>
+    $(function () {
+        let interval = setInterval(function () {
+            // document.createElement("label");
+            $("<label>")
+
+            setTimeout(function () {
+                clearInterval(interval);
+            })
+        }, 3000)
+    })
+</script>
+
+</body>
+</html>
