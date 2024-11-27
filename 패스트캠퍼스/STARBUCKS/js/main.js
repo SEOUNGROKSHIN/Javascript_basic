@@ -74,3 +74,17 @@ new Swiper(".promotion .swiper", {
         nextEl : '.promotion .swiper-next',
     }
 });
+
+const promotionEl = document.querySelector('.promotion');
+const promottionToggleBtn = document.querySelector('.toggle-promotion')
+let isHidePromotion = false;
+promottionToggleBtn.addEventListener('click', function () {
+    isHidePromotion = !isHidePromotion // true 값 넣음
+    if (isHidePromotion) {
+    // hide()
+        promotionEl.classList.add('hide');
+    } else {
+    // show()
+        promotionEl.classList.remove('hide');
+    }
+})
