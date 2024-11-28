@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tus File Upload Example</title>
+</head>
+<body>
+<h1>Upload File Using Tus</h1>
+<input type="file" id="fileInput" />
+<button id="uploadButton">Upload</button>
+<div id="progressBar" style="width: 100%; background: #f3f3f3; border: 1px solid #ccc; margin-top: 10px;">
+  <div id="progress" style="width: 0%; height: 20px; background: green; color: white; text-align: center;">0%</div>
+</div>
+<p id="status"></p>
+<script src="https://cdn.jsdelivr.net/npm/tus-js-client/dist/tus.min.js"></script>
+<script src="upload.js"></script>
+</body>
+</html>
