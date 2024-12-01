@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>파일 업로드</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<h1>AJAX 파일 업로드</h1>
+<form id="upload-form">
+  <label for="file-input">파일 선택:</label>
+  <input type="file" id="file-input" name="file">
+  <button type="button" id="upload-button">업로드</button>
+</form>
+<div id="progress-container" style="display: none;">
+  <p>업로드 진행률: <span id="progress-text">0%</span></p>
+  <progress id="progress-bar" value="0" max="100" style="width: 100%;"></progress>
+</div>
+<div id="result"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
